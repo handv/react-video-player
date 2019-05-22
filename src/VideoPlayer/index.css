@@ -1,0 +1,32 @@
+.videoPlayerContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.videoPlayerContainer .video {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+.videoPlayerContainer .ctrTips {
+  opacity: 0.9;
+  width: 3.66rem;
+  height: 0.92rem;
+  font-size: 0.3rem;
+  text-align: center;
+  line-height: 0.92rem;
+  border-radius: 0.46rem;
+  color: #36404a;
+  position: absolute;
+  left: 50%;
+  bottom: 1.44rem;
+  transform: translateX(-50%);
+  font-family: PingFang-HK-Regular;
+  background-color: #ffffff;
+}

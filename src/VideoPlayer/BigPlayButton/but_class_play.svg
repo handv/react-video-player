@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160px" height="160px" viewBox="0 0 160 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>but_class_play@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FF8B02" offset="0%"></stop>
+            <stop stop-color="#FF5900" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="80" cy="80" r="74"></circle>
+        <filter x="-0.3%" y="-1.0%" width="100.7%" height="101.4%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.71705163   0 0 0 0 0  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+        <filter x="-2.0%" y="-2.7%" width="104.1%" height="104.7%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="-1" dy="-6" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.952941176   0 0 0 0 0.207843137   0 0 0 0 0  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="切图" transform="translate(-1285.000000, -207.000000)">
+            <g id="重新开始" transform="translate(1285.000000, 207.000000)">
+                <circle id="Oval-Copy-3" fill="#EBEBEB" cx="80" cy="80" r="80"></circle>
+                <g id="Oval-Copy-3" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                    <use fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-2"></use>
+                </g>
+                <path d="M58.0997907,21.0631985 C55.9989076,21.8441711 53.9510897,22.7342627 51.9632246,23.7265857 M39.8381875,31.644512 C29.2573703,40.4421523 21.6100307,52.6467605 18.5797587,66.5747462" id="Shape" stroke="#FFFFFF" stroke-width="9.14285714" opacity="0.300000012" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M96.9086743,61.2584452 L119.636042,96.4858648 C122.454003,100.853705 121.197578,106.678948 116.829738,109.49691 C115.308854,110.478125 113.537304,111 111.727367,111 L66.2726326,111 C61.0746584,111 56.8608679,106.786209 56.8608679,101.588235 C56.8608679,99.7782986 57.3827429,98.0067485 58.3639582,96.4858648 L81.0913257,61.2584452 C83.9092871,56.890605 89.7345303,55.63418 94.1023705,58.4521414 C95.2266388,59.1774758 96.18334,60.134177 96.9086743,61.2584452 Z" id="Triangle" fill="#FFFFFF" fill-rule="nonzero" transform="translate(89.000000, 80.000000) rotate(-270.000000) translate(-89.000000, -80.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160px" height="160px" viewBox="0 0 160 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>but_class_begin@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FF8B02" offset="0%"></stop>
+            <stop stop-color="#FF5900" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="80" cy="80" r="74"></circle>
+        <filter x="-0.3%" y="-1.0%" width="100.7%" height="101.4%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.71705163   0 0 0 0 0  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+        <filter x="-2.0%" y="-2.7%" width="104.1%" height="104.7%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="-1" dy="-6" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.952941176   0 0 0 0 0.207843137   0 0 0 0 0  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="切图" transform="translate(-435.000000, -447.000000)">
+            <g id="重新开始" transform="translate(435.000000, 447.000000)">
+                <g>
+                    <circle id="Oval-Copy-3" fill="#EBEBEB" cx="80" cy="80" r="80"></circle>
+                    <g id="Oval-Copy-3" fill-rule="nonzero">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <use fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-2"></use>
+                    </g>
+                    <path d="M58.0997907,21.0631985 C55.9989076,21.8441711 53.9510897,22.7342627 51.9632246,23.7265857 M39.8381875,31.644512 C29.2573703,40.4421523 21.6100307,52.6467605 18.5797587,66.5747462" id="Shape" stroke="#FFFFFF" stroke-width="9.14285714" opacity="0.300000012" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <g id="Group" transform="translate(42.142857, 43.428571)" fill-rule="nonzero">
+                        <path d="M57.3806492,17.451763 C52.3971365,12.3266554 45.4275191,9.14285714 37.7142857,9.14285714 C22.565904,9.14285714 10.2857143,21.4230469 10.2857143,36.5714286 C10.2857143,51.7198103 22.565904,64 37.7142857,64 C47.7566781,64 56.5385494,58.6030677 61.3177279,50.5513749" id="Path" stroke="#FFFFFF" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M64.6252576,9.93265242 L77.5118907,26.886183 C79.0397093,28.8961664 78.6488375,31.7641216 76.638854,33.2919402 C75.8433738,33.8965967 74.8716927,34.2239718 73.8724938,34.2239718 L48.1537456,34.2239718 C45.6290153,34.2239718 43.582317,32.1772735 43.582317,29.6525433 C43.582317,28.6565383 43.9076054,27.6877842 44.5087093,26.8936179 L57.3408243,9.9400873 C58.8645367,7.92698931 61.7316881,7.53026392 63.7447861,9.05397633 C64.0769405,9.30538375 64.3731727,9.60101191 64.6252576,9.93265242 Z" id="Triangle" fill="#FFFFFF" transform="translate(61.009686, 21.723972) rotate(-225.000000) translate(-61.009686, -21.723972) "></path>
+                        <rect id="Rectangle" opacity="0.226143973" x="0" y="0" width="74" height="74"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

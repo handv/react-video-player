@@ -1,0 +1,38 @@
+.videoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  user-select: none;
+  pointer-events: none;
+}
+.videoContainer .videoMask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+}
+.videoContainer .videoImgContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10;
+  width: 1.6rem;
+  height: 2.3rem;
+  font-size: 0.32rem;
+  line-height: 0.45rem;
+  color: #ffffff;
+}
+.videoContainer .videoImgContainer .videoImg {
+  width: 1.6rem;
+  height: 1.6rem;
+  position: relative;
+  pointer-events: initial;
+}

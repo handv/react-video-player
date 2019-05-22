@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="160px" height="160px" viewBox="0 0 160 160" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>but_class_continue@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FF8B02" offset="0%"></stop>
+            <stop stop-color="#FF5900" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="80" cy="80" r="74"></circle>
+        <filter x="-0.3%" y="-1.0%" width="100.7%" height="101.4%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.71705163   0 0 0 0 0  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+        <filter x="-2.0%" y="-2.7%" width="104.1%" height="104.7%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="-1" dy="-6" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.952941176   0 0 0 0 0.207843137   0 0 0 0 0  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="切图" transform="translate(-747.000000, -447.000000)">
+            <g id="退出-copy-2" transform="translate(747.000000, 447.000000)">
+                <g id="退出按钮">
+                    <circle id="Oval-Copy-3" fill="#EBEBEB" opacity="0.600000024" cx="80" cy="80" r="80"></circle>
+                    <g id="Oval-Copy-3" fill-rule="nonzero">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+                        <use fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-2"></use>
+                    </g>
+                    <path d="M58.0997907,21.0631985 C55.9989076,21.8441711 53.9510897,22.7342627 51.9632246,23.7265857 M39.8381875,31.644512 C29.2573703,40.4421523 21.6100307,52.6467605 18.5797587,66.5747462" id="Shape" stroke="#FFFFFF" stroke-width="9.14285714" opacity="0.300000012" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <g id="Group-2" transform="translate(43.000000, 49.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                        <rect id="Rectangle" transform="translate(22.000000, 31.000000) scale(-1, 1) rotate(-90.000000) translate(-22.000000, -31.000000) " x="9" y="9" width="26" height="44" rx="13"></rect>
+                        <path d="M59.1691913,14.1574281 L78.1835014,38.1832728 C81.3170933,42.1427745 80.6475612,47.8928629 76.6880595,51.0264549 C75.0730435,52.3045958 73.0737819,53 71.0141894,53 L32.9855692,53 C27.9361087,53 23.8427121,48.9066034 23.8427121,43.8571429 C23.8427121,41.7975504 24.5381163,39.7982888 25.8162572,38.1832728 L44.8305673,14.1574281 C47.9641592,10.1979264 53.7142477,9.52839421 57.6737494,12.6619861 C58.2283988,13.1009416 58.7302359,13.6027787 59.1691913,14.1574281 Z" id="Triangle" transform="translate(52.000000, 31.000000) rotate(-270.000000) translate(-52.000000, -31.000000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

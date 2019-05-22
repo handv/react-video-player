@@ -1,0 +1,85 @@
+.ctrContainer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  height: 1.2rem;
+  font-weight: 500;
+  align-items: center;
+  font-size: 0.26rem;
+  line-height: 0.36rem;
+  font-family: PingFangSC-Medium;
+  color: #ffffff;
+  text-shadow: 0 1 0 rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.ctrContainer .pauseBtn {
+  width: 0.48rem;
+  height: 0.48rem;
+  margin: 0 0.46rem 0 0.42rem;
+}
+.ctrContainer .currentTime {
+  user-select: none;
+  margin-right: 0.42rem;
+}
+.ctrContainer .progressBarWrapper {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.ctrContainer .progressBarWrapper .progressBar {
+  flex-grow: 1;
+  height: 0.12rem;
+  position: relative;
+  border-radius: 1rem;
+  background-color: rgba(235, 235, 235, 0.22);
+}
+.ctrContainer .progressBarWrapper .progressBar .bufferedBar {
+  height: 100%;
+  position: absolute;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.ctrContainer .progressBarWrapper .progressBar .timeBar {
+  height: 100%;
+  position: absolute;
+  border-radius: 1rem;
+  background-color: #ffcb00;
+}
+.ctrContainer .progressBarWrapper .dragBtn {
+  position: absolute;
+  top: -0.1rem;
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 50%;
+}
+.ctrContainer .progressBarWrapper .draggingSeconds {
+  position: absolute;
+  top: -0.5rem;
+  width: 0.56rem;
+  padding: 0.05rem;
+  user-select: none;
+  text-align: center;
+  border-radius: 0.05rem;
+  font-family: monospace;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.ctrContainer .duration {
+  user-select: none;
+  margin: 0 0.72rem 0 0.2rem;
+}
+.ctrContainer .speedBtn {
+  width: 1.32rem;
+  height: 0.6rem;
+  text-align: center;
+  font-size: 0.34rem;
+  line-height: 0.6rem;
+  margin-right: 0.36rem;
+  border-radius: 0.31rem;
+  color: #ffffff;
+  font-family: FZLANTY_ZHONGJW--GB1-0;
+  background: linear-gradient(180deg, #ff8b02 0%, #ff5900 100%);
+}
