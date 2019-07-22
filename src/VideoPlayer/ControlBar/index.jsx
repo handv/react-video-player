@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import lClamp from 'lodash/clamp'
 
 import './index.css'
+import IMAGE_PLAY from './play.svg'
 import IMAGE_PAUSE from './pause.svg'
 import IMAGE_DRAG_BTN from './dragBtn.svg'
 import {toPercents, formatSeconds} from '../../utils'
@@ -17,6 +18,11 @@ const SPEED = {
     speed: 1
   }
 }
+
+const IMG = {
+  play: IMAGE_PLAY,
+  pause: IMAGE_PAUSE
+}
 export default class ControlBar extends Component {
   _elProgressBar
   _isPressed = false
@@ -25,14 +31,10 @@ export default class ControlBar extends Component {
     super(props)
     this.state = {
       speedType: 'normal',
+      imgStatus: 'pause', // 是播放按钮还是暂停按钮
       draggingPercents: null,
-      dragBtnWidth: 0.32 * parseFloat(document.documentElement.style.fontSize),
+      dragBtnWidth: 0
     }
-  }
-
-  componentDidMount() {
-    window.addEventListener('mouseup', this.handleMouseUp)
-    window.addEventListener('mousemove', this.handleMouseMove)
   }
 
   renderBufferedBar = () => {
@@ -58,6 +60,95 @@ export default class ControlBar extends Component {
       )
     }
     return bufferedBars
+  }
+
+render() {
+    const {_isPressed} = this
+    const {speedType, dragBtnWidth, draggingPercents, imgStatus} = this.state
+    const {
+      ctx: {
+        state: {video, controlBarVisible}
+      }
+    } = this.props
+
+    if (!_isPressed && (!video || !controlBarVisible)) return null
+
+    const currentTimePercents = toPercents(video.currentTime / video.duration)
+    const dragBtnPercents = _isPressed
+      ? toPercents(draggingPercents)
+      : currentTimePercents
+
+    return (
+      <div className="ctrContainer">
+        <img
+          alt="pause"
+          draggable={false}
+          src={IMG[imgStatus]}
+          className="pauseBtn"
+          onClick={this.handlePlay}
+        />
+        <div className="currentTime">{formatSeconds(video.currentTime)}</div>
+
+        <div
+          draggable={false}
+          className="progressBarWrapper"
+          onTouchEnd={this.handleTouchEnd}
+          onTouchMove={this.handleTouchMove}
+          onMouseDown={this.handleMouseDown}
+          onTouchStart={this.handleTouchStart}
+        >
+          <div
+            draggable={false}
+            className="progressBar"
+            ref={e => (this._elProgressBar = e)}
+          >
+            {this.renderBufferedBar()}
+            <div
+              draggable={false}
+              className="timeBar"
+              style={{width: dragBtnPercents}}
+            />
+            <img
+              alt="drag"
+              draggable={false}
+              className="dragBtn"
+              src={IMAGE_DRAG_BTN}
+              style={
+                dragBtnWidth
+                  ? {left: `calc(${dragBtnPercents} - ${dragBtnWidth / 2}px)`}
+                  : ''
+              }
+            />
+            {_isPressed ? (
+              <div
+                draggable={false}
+                className="draggingSeconds"
+                style={{left: `calc(${dragBtnPercents} - 28px)`}}
+              >
+                {formatSeconds(draggingPercents * video.duration)}
+              </div>
+            ) : null}
+          </div>
+        </div>
+
+        <div className="duration">{formatSeconds(video.duration)}</div>
+        <div className="speedBtn" onClick={this.handleSpeed}>
+          {SPEED[speedType].text}
+        </div>
+      </div>
+    )
+  }
+
+  componentDidMount() {
+    window.addEventListener('mouseup', this.handleMouseUp)
+    window.addEventListener('mousemove', this.handleMouseMove)
+    const fontSize = parseFloat(document.documentElement.style.fontSize)
+    this.setState({dragBtnWidth: 0.32 * fontSize})
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('mouseup', this.handleMouseUp)
+    window.removeEventListener('mousemove', this.handleMouseMove)
   }
 
   getTimePercentsByPageX(pageX) {
@@ -120,14 +211,23 @@ export default class ControlBar extends Component {
     })
   }
 
-  handlePause = () => {
+  handlePlay = () => {
     const {
-      ctx: {pause, hideControlBar, toggleBigPlayBtn}
+      ctx: {
+        play,
+        pause,
+        state: {video}
+      }
     } = this.props
+    if(video.paused){
+      play()
+    }else {
+      pause()
+    }
+  }
 
-    hideControlBar()
-    toggleBigPlayBtn()
-    pause()
+  togglePlayBtn = (status) => {
+    this.setState({imgStatus: status})
   }
 
   handleSpeed = () => {
@@ -156,88 +256,6 @@ export default class ControlBar extends Component {
   isDragging() {
     const {_isPressed} = this
     return _isPressed
-  }
-
-  render() {
-    const {_isPressed} = this
-    const {speedType, dragBtnWidth, draggingPercents} = this.state
-    const {
-      ctx: {
-        state: {video, controlBarVisible}
-      }
-    } = this.props
-
-    if (!_isPressed && (!video || !controlBarVisible)) return null
-
-    const currentTimePercents = toPercents(video.currentTime / video.duration)
-    const dragBtnPercents = _isPressed
-      ? toPercents(draggingPercents)
-      : currentTimePercents
-
-    return (
-      <div className="ctrContainer">
-        <img
-          alt="pause"
-          draggable={false}
-          src={IMAGE_PAUSE}
-          className="pauseBtn"
-          onClick={this.handlePause}
-        />
-        <div className="currentTime">{formatSeconds(video.currentTime)}</div>
-
-        <div
-          draggable={false}
-          className="progressBarWrapper"
-          onTouchEnd={this.handleTouchEnd}
-          onTouchMove={this.handleTouchMove}
-          onMouseDown={this.handleMouseDown}
-          onTouchStart={this.handleTouchStart}
-        >
-          <div
-            draggable={false}
-            className="progressBar"
-            ref={e => (this._elProgressBar = e)}
-          >
-            {this.renderBufferedBar()}
-            <div
-              draggable={false}
-              className="timeBar"
-              style={{width: dragBtnPercents}}
-            />
-            <img
-              alt="drag"
-              draggable={false}
-              className="dragBtn"
-              src={IMAGE_DRAG_BTN}
-              style={
-                dragBtnWidth
-                  ? {left: `calc(${dragBtnPercents} - ${dragBtnWidth / 2}px)`}
-                  : ''
-              }
-            />
-            {_isPressed ? (
-              <div
-                draggable={false}
-                className="draggingSeconds"
-                style={{left: `calc(${dragBtnPercents} - 28px)`}}
-              >
-                {formatSeconds(draggingPercents * video.duration)}
-              </div>
-            ) : null}
-          </div>
-        </div>
-
-        <div className="duration">{formatSeconds(video.duration)}</div>
-        <div className="speedBtn" onClick={this.handleSpeed}>
-          {SPEED[speedType].text}
-        </div>
-      </div>
-    )
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('mouseup', this.handleMouseUp)
-    window.removeEventListener('mousemove', this.handleMouseMove)
   }
 }
 

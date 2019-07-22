@@ -1,33 +1,19 @@
 import React, {Component} from 'react'
-import VideoPlayer from './VideoPlayer'
+import {HashRouter as Router, Route, Switch} from 'react-router-dom'
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      data: null
-    }
-  }
+import Home from './Home'
+import Video from './Video'
 
-  componentDidMount() {
-    const docEl = document.documentElement
-    const {clientHeight} = docEl
-    if (clientHeight >= 750) {
-      docEl.style.fontSize = '100px'
-    } else {
-      docEl.style.fontSize = 100 * (clientHeight / 750) + 'px'
-    }
-    this.setState({
-      data: {
-        src: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'
-      }
-    })
-  }
-  
+export default class App extends Component {
+
   render() {
-    const {data} = this.state
-    return data ? <VideoPlayer data={data} /> : null
+    return (
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/video" component={Video} />
+        </Switch>
+      </Router>
+    )
   }
 }
-
-export default App

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import './index.css'
 import ControlBar from './ControlBar'
+import BackBtn from './ic_class_back.svg'
 import BigPlayButton from './BigPlayButton'
 
 const HIDE_PAUSED_GROUP_FOR_CLICK = 3000
@@ -21,8 +22,18 @@ export default class VideoPlayer extends Component {
 
   render() {
     const {data} = this.props
+    const {controlBarVisible} = this.state
+
     return (
       <div className="videoPlayerContainer">
+        {controlBarVisible ? (
+          <img
+            className="backBtn"
+            src={BackBtn}
+            alt="back"
+            onClick={this.handleClose}
+          />
+        ) : null}
         <video
           className="video"
           src={data && data.src}
@@ -30,16 +41,16 @@ export default class VideoPlayer extends Component {
           playsInline
           preload="load"
           airplay="allow"
+          x5-playsinline="true"
           x-webkit-airplay="allow"
           x5-video-player-type="h5"
           webkit-playsinline="true"
-          x5-video-orientation="portrait"
           ref={this.handleVideoRef}
           onClick={this.handleVideoClick}
           onProgress={this.handleVideoProgress}
         />
         <BigPlayButton ctx={this} />
-        <ControlBar ctx={this} ref={e => e && (this._controlBar = e)}/>
+        <ControlBar ctx={this} ref={e => e && (this._controlBar = e)} />
       </div>
     )
   }
@@ -54,10 +65,10 @@ export default class VideoPlayer extends Component {
   }
 
   handleVideoClick = () => {
-    const {controlBarVisible, video} = this.state
+    const {controlBarVisible, video, bigPlayBtnVisible} = this.state
     if (!video) return
     // 播放状态可以显示隐藏控制栏
-    if (!video.paused) {
+    if (!bigPlayBtnVisible) {
       if (controlBarVisible) {
         this.hideControlBar()
       } else {
@@ -100,19 +111,29 @@ export default class VideoPlayer extends Component {
     const {video} = this.state
     if (!video) return
     video.play()
+    // 控制条按钮为暂停样式
+    this._controlBar.togglePlayBtn('pause')
   }
 
   pause = () => {
     const {video} = this.state
     if (!video) return
     video.pause()
+    this._controlBar.togglePlayBtn('play')
   }
 
   replay = () => {
     const {video} = this.state
     if (!video) return
     video.currentTime = 0
-    video.play()
+    this.play()
+  }
+
+  // 点击左上角退出按钮
+  handleClose = () => {
+    this.hideControlBar()
+    this.toggleBigPlayBtn()
+    this.pause()
   }
 }
 

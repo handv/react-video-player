@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_player_play_small@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-9.4%" y="-7.1%" width="118.8%" height="116.3%" filterUnits="objectBoundingBox" id="filter-1">
+            <feMorphology radius="0.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="1" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="1" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.4 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="切图" transform="translate(-1032.000000, -319.000000)">
+            <g id="ic_player_play_small" filter="url(#filter-1)" transform="translate(1034.000000, 320.000000)">
+                <rect id="Rectangle-22" x="0" y="1" width="48" height="48"></rect>
+                <path d="M28.0210023,13.1067443 L42.5394397,35.6909803 C44.0854039,38.0958135 43.389153,41.2985675 40.9843199,42.8445317 C40.1493689,43.3812859 39.1777007,43.6666667 38.1851041,43.6666667 L9.14822925,43.6666667 C6.28934348,43.6666667 3.97175866,41.3490818 3.97175866,38.4901961 C3.97175866,37.4975995 4.25713945,36.5259312 4.79389361,35.6909803 L19.312331,13.1067443 C20.8582952,10.7019112 24.0610493,10.0056603 26.4658824,11.5516245 C27.0896609,11.9526249 27.6200019,12.4829659 28.0210023,13.1067443 Z" id="Triangle" fill="#FFFFFF" fill-rule="nonzero" transform="translate(23.666667, 25.000000) rotate(-270.000000) translate(-23.666667, -25.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

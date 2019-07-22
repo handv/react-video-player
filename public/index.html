@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
     <meta name="format-detection" content="telephone=no, email=no">
     <meta http-equiv="x-rim-auto-match" content="none">
+    <script type="text/javascript">
+      (function (doc) {
+        var docEl = doc.documentElement,
+          recalc = function () {
+            var clientWidth = docEl.clientHeight;
+            if (!clientWidth) return;
+            if (clientWidth >= 750) {
+              docEl.style.fontSize = '100px';
+            } else {
+              docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+            }
+          };
+        if (!doc.addEventListener) return;
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+      })(document);
+    </script>
     <title>React Wap Custom Video Player</title>
   </head>
   <body>
