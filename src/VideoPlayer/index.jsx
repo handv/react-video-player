@@ -30,10 +30,10 @@ export default class VideoPlayer extends Component {
           playsInline
           preload="load"
           airplay="allow"
+          x5-playsinline="true"
           x-webkit-airplay="allow"
           x5-video-player-type="h5"
           webkit-playsinline="true"
-          x5-video-orientation="portrait"
           ref={this.handleVideoRef}
           onClick={this.handleVideoClick}
           onProgress={this.handleVideoProgress}
