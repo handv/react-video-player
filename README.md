@@ -1,4 +1,11 @@
-移动端网页自定义视频播放器组件
+微信环境下，自定义视频播放器组件
+
+## feature
+
+- 始终横屏播放
+- 自定义控制条
+- android，ios微信亲测有效
+- 支持webview
 
 ![image](./readme.png)
 
@@ -37,6 +44,39 @@ video标签必须包含以下几个参数，使得video播放器为内联样式�
 ```
 
 android横屏播放实现方案2：
+```jsx
+<video
+  id="video" 
+  src="video.mp4" 
+  poster="images.jpg"       // 视频封面
+  preload="load"
+  x5-video-player-type="h5" // 启用H5播放器,是微信安卓版特性
+  x5-video-orientation="landscape"  // 播放器支持的方向， landscape横屏，portraint竖屏，默认值为竖屏
+  x5-video-player-fullscreen="true" // 视频播放时将会进入到全屏模式
+/>
+```
+
+
+## 自定义播放器的使用
+
+video标签必须包含以下几个参数，使得video播放器为内联样式，满足微信内播放要求
+
+```jsx
+<video
+  id="video" 
+  src="video.mp4" 
+  poster="images.jpg"       // 视频封面
+  preload="auto" 
+  playsinline="true"        // IOS微信浏览器支持小窗内播放
+  webkit-playsinline="true" // 这个属性是ios 10中设置可以，让视频在小窗内播放，也就是不是全屏播放 
+  x5-video-player-type="h5" // 启用H5播放器,是微信安卓版特性
+  x5-playsinline="true"     // 安卓微信浏览器支持小窗内播放
+  x-webkit-airplay="allow"  // 这个属性使此视频支持ios的AirPlay功能 
+  style="object-fit:fill"
+</video>
+```
+
+android横屏播放实现方案2：(全屏，仅测试过android微信可用)
 ```jsx
 <video
   id="video" 
